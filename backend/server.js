@@ -9,8 +9,12 @@ dotenv.config();
 const app = express();
 
 // ✅ safer CORS
+const corsOrigin = process.env.FRONTEND_URL
+  ? process.env.FRONTEND_URL.replace(/\/$/, "") // dynamically remove trailing slash if present
+  : "*";
+
 app.use(cors({
-  origin: process.env.FRONTEND_URL || "*",
+  origin: corsOrigin,
   methods: ["GET", "POST"],
 }));
 
