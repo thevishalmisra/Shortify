@@ -7,11 +7,10 @@ function About() {
         This MERN URL Shortener allows users to convert long links into short,
         shareable URLs. It also generates QR codes for quick access and keeps
         track of clicks using MongoDB.
+      </p>
         
-      <p className="text-red-400 leading-7">
-            for more Contact :- VishalRamanishere@gmail.com
-        </p>
-        
+      <p className="text-red-400 leading-7 mt-4">
+        For more, contact: VishalRamanishere@gmail.com
       </p>
 
       <div className="mt-6 text-gray-400">

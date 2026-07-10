@@ -33,7 +33,7 @@ router.post("/shorten", async (req, res) => {
 
     res.json({
       shortId: url.shortId,
-      shortUrl: `${process.env.BASE_URL}/${url.shortId}`,
+      shortUrl: `${process.env.BASE_URL || `http://localhost:${process.env.PORT || 5000}`}/${url.shortId}`,
     });
   } catch (error) {
     console.log(error);
