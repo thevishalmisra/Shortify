@@ -6,10 +6,15 @@ const router = express.Router();
 
 router.post("/shorten", async (req, res) => {
   try {
-    const { originalUrl } = req.body;
+    let { originalUrl } = req.body;
 
     if (!originalUrl) {
       return res.status(400).json({ error: "URL is required" });
+    }
+
+    // Automatically prepend protocol if it is missing
+    if (!/^https?:\/\//i.test(originalUrl)) {
+      originalUrl = `https://${originalUrl}`;
     }
 
     try {
